@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Renel Jerome Orbeta - Software Developer and IT Graduate.">
+  <title>Renel Jerome J. Orbeta | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#top">Renel Jerome J. Orbeta</a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Software Developer &amp; IT Graduate</p>
+        <h1>Hi, I'm Renel Jerome J. Orbeta.</h1>
+        <p class="intro">Bachelor of Science in Information Technology graduate interested in programming and web development. I enjoy building useful applications, learning new technologies, and creating clean, maintainable solutions.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">View Projects</a>
+          <a class="button button-secondary" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+      <div class="profile-photo-container" aria-label="Container for my profile photo">
+		<img src="images/MyPhoto.png" alt="A picture of me." style="max-width: 240px; width: 100%; height: auto;">       
+      </div>
+    </section>
+
+
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <p class="section-copy">I am an Information Technology graduate with a foundation in programming, web development, and database management. I am eager to keep improving my technical skills and apply what I learn to practical projects.</p>
+      <div class="cards skills-grid" id="skills">
+        <article class="card">
+          <h3>Programming &amp; Web Development</h3>
+          <ul class="skill-list">
+            <li>Java</li><li>Python</li><li>JavaScript</li><li>MySQL</li><li>HTML5</li><li>CSS3</li><li>C++</li><li>C#</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Tools &amp; Technologies</h3>
+          <ul class="skill-list">
+            <li>FastAPI</li><li>Streamlit</li><li>Polars</li><li>Parquet</li><li>REST APIs</li><li>pytest</li><li>Git &amp; GitHub</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Featured Projects</h2>
+      <div class="project-list">
+        <article class="card project-card">
+          <div class="project-heading">
+            <h3>Vectorized Financial Backtesting Engine</h3>
+            <a class="project-link" href="https://github.com/Renel-Jerome-Orbeta/Vectorized-Financial-Backtesting-Engine" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+          <p>A Python financial backtesting project using yfinance for data, Polars for processing, Parquet storage, FastAPI endpoints, pytest tests, and a Streamlit dashboard.</p>
+          <ul class="skill-list"><li>Python</li><li>yfinance</li><li>Polars</li><li>Parquet</li><li>FastAPI</li><li>pytest</li><li>Streamlit</li></ul>
+        </article>
+        <article class="card project-card">
+          <div class="project-heading">
+            <h3>KanbaNotes</h3>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Renel-Jerome-Orbeta/KanbaNotes" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+          <p>A drag-and-drop Kanban board made with HTML, CSS, and JavaScript, featuring task cards, CRUD modals, and LocalStorage saving.</p>
+          <ul class="skill-list"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>CRUD</li><li>LocalStorage</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <h2>Contact</h2>
+      <p class="section-copy">Connect with me or copy my email address if you'd like to get in touch.</p>
+      <div class="contact-actions">
+        <button class="button button-primary" id="copy-email" type="button" data-email="riggsorbeta225@gmail.com">Copy Email</button>
+        <a class="button button-secondary" href="https://github.com/Renel-Jerome-Orbeta" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="button button-secondary" href="https://www.linkedin.com/in/renel-jerome-orbeta-71b747130" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+      <p class="copy-message" id="copy-message" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer><p>© <span id="year">2026</span> Renel Jerome Orbeta</p><p class="footer-note">Personal portfolio</p></footer>
+  <script>
+    const copyButton = document.getElementById('copy-email');
+    const copyMessage = document.getElementById('copy-message');
+    copyButton.addEventListener('click', async () => {
+      const email = copyButton.dataset.email;
+      try {
+        await navigator.clipboard.writeText(email);
+        copyMessage.textContent = 'Email copied to clipboard!';
+        copyButton.textContent = 'Copied!';
+      } catch (error) {
+        copyMessage.textContent = 'Copy failed. Email: ' + email;
+      }
+      setTimeout(() => { copyButton.textContent = 'Copy Email'; }, 2200);
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
