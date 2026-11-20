@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="images/MyPhoto.jpg">
 </head>
 <body>
   <header class="site-header">
@@ -35,7 +36,7 @@
         </div>
       </div>
       <div class="profile-photo-container" aria-label="Container for my profile photo">
-		<img src="images/MyPhoto.png" alt="A picture of me." style="max-width: 240px; width: 100%; height: auto;">       
+		<img src="images/MyPhoto.jpg" alt="A picture of me." style="max-width: 240px; width: 100%; height: auto;">       
       </div>
     </section>
 
@@ -109,7 +110,7 @@
       }
       setTimeout(() => { copyButton.textContent = 'Copy Email'; }, 2200);
     });
-    document.getElementById('year').textContent = new Date().getFullYear();
+    
   </script>
 </body>
 </html>
